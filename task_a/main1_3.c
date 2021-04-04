@@ -3,16 +3,16 @@
 #include <stdio.h>
 #include <dlfcn.h>
 
-void (*hello_message)(const char *);
+void (*hello_ariel)(const char *);
 
 bool init_library(){
     void *hdl = dlopen("./libHello.so", RTLD_LAZY);
-    if (hdl == NULL) {
+    if (NULL == hdl) {
         printf("dlopen error \n");
         return false;
     }
-    hello_message = (void(*)(const char *))dlsym(hdl,"hello_message");
-    if (hello_message == NULL) {
+    hello_ariel = (void(*)(const char *))dlsym(hdl,"hello_ariel");
+    if (NULL == hello_ariel) {
         printf("dlsym error \n");
         return false;
     }
@@ -20,7 +20,7 @@ bool init_library(){
 }
 
 int main() {
-    if (init_library()) hello_message("SamSam");
+    if (init_library()) hello_ariel("SamSam");
     else printf("Error loading library\n");
     return 0;
 }
