@@ -4,7 +4,7 @@ CFLAG = -Wall -Wextra -g -o
 .PHONY: clean
 .PHONY: all
 
-all: 1 2 3
+all: 1 2 3 4
 
 1: 
 	$(CC) main2_1.c -o main2_1
