@@ -7,7 +7,7 @@ CFLAG = -Wall -Wextra -g -o
 all: lib 1 2 3 
 
 1: 
-	$(CC) hello_ariel.c main1_1.c -o main1_1
+	$(CC) hello_ariel.c main1_1.c -o main1_1.o
 
 2:
 	$(CC) main1_2.c -L. -l Hello -o main1_2
